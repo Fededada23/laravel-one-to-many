@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('add_foreign_key_to_projects', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('projects', function (Blueprint $table) {
+            //
         });
     }
 
@@ -26,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('add_foreign_key_to_projects');
+        Schema::table('projects', function (Blueprint $table) {
+            //
+        });
     }
 };
