@@ -25,7 +25,8 @@ class StorePostRequest extends FormRequest
     {
         return [
             'title' => ['required','unique:projects','max:150'],
-            'content' =>['nullable']
+            'content' =>['nullable'],
+            'type_id' => ['nullable','exists:types,id']
         ];
     }
 
@@ -40,7 +41,8 @@ class StorePostRequest extends FormRequest
             'title.required' => 'Il titolo è obbligatorio',
             'title.unique' => 'Questo titolo è già stato assegnato ad un progetto',
             'title.max' => 'Il titolo non deve essere più lungo di :max caratteri',
-            'description.max' => 'La descrizione non può contenere più di :max caratteri'
+            'description.max' => 'La descrizione non può contenere più di :max caratteri',
+            'type_id.exists' => 'Seleziona tipo'
         ];
     }
 }
