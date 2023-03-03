@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use App\Models\Type;
 use App\Models\Project;
 use App\Http\Controllers\Controller; 
 
@@ -85,7 +86,6 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
-
         return view('admin.projects.edit', compact('project', 'types'));
     }
 

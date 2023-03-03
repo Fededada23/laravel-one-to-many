@@ -20,6 +20,15 @@
                         <label class="fs-2 fw-semibold" for="description">Descrizione</label>
                         <textarea type="password" class="form-control" name="description" id="description" placeholder="Inserire Descrizione"></textarea>
                     </div>
+                    <div class="form-group my-2">
+                        <label class="fs-2 fw-semibold" for="type_id">Categorie</label>
+                        <select class="form-control" name="type_id" id="type_id">
+                            @foreach ($types as $type)
+                            <option value="{{$type->id}}">
+                                {{$type->name}}
+                            @endforeach
+                        </select>
+                    </div>
                     <button type="submit" class="btn btn-success">Salva</button>
                 </form>
             </div>
