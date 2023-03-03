@@ -15,6 +15,8 @@
             <p><strong> Slug: </strong> {{$project->slug}}</p>
             <label class="d-block"><strong>Descrizione: </strong></label>
             <p>{{$project->description}}</p>
+            <label class="d-block"><strong>Categoria: </strong></label>
+            <p>{{$project->type ? $project->type->name : 'Senza categoria'}}</p>
         </div>
     </div>
 @endsection
